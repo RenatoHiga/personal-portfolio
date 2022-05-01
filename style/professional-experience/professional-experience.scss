@@ -1,0 +1,33 @@
+.professional-experience {
+  display: block;
+  min-height: 100vh;
+  background-color: #1d478f;
+}
+
+.professional-experience__location-name {
+  font-size: 1.5em;
+}
+
+.professional-experience__job-role {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.professional-experience__lists-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.professional-experience__companies-list {
+  padding-left: 75px;
+}
+
+.professional-experience__education-list {
+  padding-left: 75px;
+}
+
+.professional-experience__activities-list {
+  margin-top: 15px;
+  max-width: 650px;
+}
