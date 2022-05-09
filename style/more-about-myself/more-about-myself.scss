@@ -1,0 +1,35 @@
+@use "my-photo/my-photo.scss";
+
+.more-about-myself {
+  height: 100vh;
+  position: relative;
+
+  background-color: #1d478f;
+}
+
+.more-about-myself__path-clip-filler {
+  display: block;
+  width: 100%;
+  min-height: 73px;
+
+  position: absolute;
+  bottom: 0;
+
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 100%);
+
+  background-color: #07398e;
+}
+
+.more-about-myself__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.more-about-myself__text {
+  max-width: 780px;
+}
+
+.more-about-myself__title {
+  margin-bottom: 20px;
+}
