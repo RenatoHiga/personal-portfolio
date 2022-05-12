@@ -29,3 +29,16 @@
 .my-photo__image {
   width: 100%;
 }
+
+@media (max-width: 1024px) {
+  .my-photo {
+    margin-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .my-photo__background,
+  .my-photo__image-container {
+    width: 250px;
+    height: 250px;
+  }
+}

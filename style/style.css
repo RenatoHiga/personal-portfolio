@@ -35,6 +35,28 @@
   letter-spacing: 4px;
 }
 
+@media (max-width: 1024px) {
+  .who-am-i {
+    height: 350px;
+  }
+
+  .who-am-i__full-name {
+    font-size: 1.5em;
+  }
+
+  .who-am-i__developer-type {
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 4px;
+    white-space: nowrap;
+  }
+
+  .who-am-i__programming-languages {
+    margin-top: 70px;
+    font-size: 1em;
+    letter-spacing: 4px;
+  }
+}
 .my-photo {
   position: relative;
   padding-left: 100px;
@@ -63,7 +85,22 @@
   width: 100%;
 }
 
+@media (max-width: 1024px) {
+  .my-photo {
+    margin-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .my-photo__background,
+.my-photo__image-container {
+    width: 250px;
+    height: 250px;
+  }
+}
 .more-about-myself {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100vh;
   position: relative;
   background-color: #1d478f;
@@ -87,12 +124,32 @@
 
 .more-about-myself__text {
   max-width: 780px;
+  font-size: 1em;
 }
 
 .more-about-myself__title {
   margin-bottom: 20px;
 }
 
+@media (max-width: 1024px) {
+  .more-about-myself {
+    height: 125vh;
+    min-height: 800px;
+  }
+
+  .more-about-myself__title {
+    text-align: center;
+  }
+
+  .more-about-myself__text > p {
+    font-size: 0.75em;
+    text-align: center;
+  }
+
+  .more-about-myself__container {
+    flex-direction: column;
+  }
+}
 .personal-projects {
   height: 100vh;
   position: relative;
@@ -315,6 +372,12 @@ body {
 
 .overflow-auto {
   overflow: auto;
+}
+
+@media (max-width: 1024px) {
+  .huge-title {
+    font-size: 1.5em;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
