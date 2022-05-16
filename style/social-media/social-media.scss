@@ -40,3 +40,21 @@
   align-items: center;
   width: 100%;
 }
+
+@media (max-width: 1024px) {
+  .social-media__list-item {
+    width: 100%;
+    max-width: 400px;
+    height: 75px;
+  }
+
+  .social-media__icon-container {
+    min-width: 25px;
+    min-height: 25px;
+  }
+
+  .social-media__icon {
+    width: 40px;
+    margin: 0 15px;
+  }
+}

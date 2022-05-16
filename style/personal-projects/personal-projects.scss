@@ -1,0 +1,107 @@
+.personal-projects {
+  height: 100vh;
+
+  position: relative;
+  background-color: #07398e;
+}
+
+.personal-projects__path-clip-filler {
+  display: block;
+  width: 100%;
+  min-height: 73px;
+
+  position: absolute;
+  bottom: 0;
+
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 100%);
+
+  background-color: #1d478f;
+}
+
+.personal-projects__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.personal-projects__carousel {
+  display: block;
+  width: 1280px;
+  height: 720px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.personal-projects__item-background {
+  display: block;
+  width: 1280px;
+  height: 720px;
+
+  // overflow: hidden;
+
+  background-color: #7495c8;
+  background-image: url(../images/personal-projects/fitness-training/cadastra_exercicio.png);
+  background-size: cover;
+  background-position: center;
+
+  // filter: blur(8px);
+}
+
+.personal-projects__image {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  filter: blur(2px);
+
+  max-height: 100%;
+}
+
+.personal-projects__image-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  z-index: 1;
+
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.personal-projects__image-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .personal-projects {
+    height: initial;
+    min-height: 100vh;
+    padding-bottom: 73px;
+  }
+
+  .personal-projects__carousel {
+    width: 100vw;
+    height: 65vh;
+    min-height: 450px;
+  }
+
+  .personal-projects__image {
+    min-height: 450px;
+  }
+
+  .personal-projects__path-clip-filler {
+    // position: relative;
+  }
+}

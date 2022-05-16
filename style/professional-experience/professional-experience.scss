@@ -46,3 +46,26 @@
 
   background-color: #2f5ba2;
 }
+
+@media (max-width: 1024px) {
+  .professional-experience__lists-container {
+    flex-direction: column;
+  }
+
+  .professional-experience__location-name {
+    font-size: 1em;
+  }
+
+  .professional-experience__job-role {
+    font-size: 0.8em;
+  }
+
+  .professional-experience__activities-list > li {
+    font-size: 0.65em;
+  }
+
+  .professional-experience__companies-list,
+  .professional-experience__education-list {
+    padding-left: 0;
+  }
+}
