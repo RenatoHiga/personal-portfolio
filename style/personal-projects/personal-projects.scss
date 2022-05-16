@@ -83,3 +83,25 @@
 
   overflow: hidden;
 }
+
+@media (max-width: 1024px) {
+  .personal-projects {
+    height: initial;
+    min-height: 100vh;
+    padding-bottom: 73px;
+  }
+
+  .personal-projects__carousel {
+    width: 100vw;
+    height: 65vh;
+    min-height: 450px;
+  }
+
+  .personal-projects__image {
+    min-height: 450px;
+  }
+
+  .personal-projects__path-clip-filler {
+    // position: relative;
+  }
+}

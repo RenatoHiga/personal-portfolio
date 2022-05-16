@@ -48,7 +48,7 @@
     font-size: 1em;
     font-weight: 500;
     letter-spacing: 4px;
-    white-space: nowrap;
+    white-space: initial;
   }
 
   .who-am-i__programming-languages {
@@ -89,6 +89,7 @@
   .my-photo {
     margin-top: 25px;
     padding-bottom: 25px;
+    padding-left: 25px;
   }
 
   .my-photo__background,
@@ -135,6 +136,7 @@
   .more-about-myself {
     height: 125vh;
     min-height: 800px;
+    max-height: 815px;
   }
 
   .more-about-myself__title {
@@ -219,6 +221,23 @@
   overflow: hidden;
 }
 
+@media (max-width: 1024px) {
+  .personal-projects {
+    height: initial;
+    min-height: 100vh;
+    padding-bottom: 73px;
+  }
+
+  .personal-projects__carousel {
+    width: 100vw;
+    height: 65vh;
+    min-height: 450px;
+  }
+
+  .personal-projects__image {
+    min-height: 450px;
+  }
+}
 .professional-experience {
   display: block;
   min-height: 100vh;
@@ -264,6 +283,28 @@
   background-color: #2f5ba2;
 }
 
+@media (max-width: 1024px) {
+  .professional-experience__lists-container {
+    flex-direction: column;
+  }
+
+  .professional-experience__location-name {
+    font-size: 1em;
+  }
+
+  .professional-experience__job-role {
+    font-size: 0.8em;
+  }
+
+  .professional-experience__activities-list > li {
+    font-size: 0.65em;
+  }
+
+  .professional-experience__companies-list,
+.professional-experience__education-list {
+    padding-left: 0;
+  }
+}
 .social-media {
   min-height: 100vh;
   overflow: auto;
@@ -304,6 +345,23 @@
   width: 100%;
 }
 
+@media (max-width: 1024px) {
+  .social-media__list-item {
+    width: 100%;
+    max-width: 400px;
+    height: 75px;
+  }
+
+  .social-media__icon-container {
+    min-width: 25px;
+    min-height: 25px;
+  }
+
+  .social-media__icon {
+    width: 40px;
+    margin: 0 15px;
+  }
+}
 * {
   padding: 0;
   margin: 0;
