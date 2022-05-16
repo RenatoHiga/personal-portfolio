@@ -76,6 +76,10 @@ body {
   overflow: auto;
 }
 
+.d-none {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .huge-title {
     font-size: 1.5em;

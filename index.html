@@ -66,12 +66,14 @@
       <div class="personal-projects__container">
         <h1 class="mb-20 huge-title text-center">Projetos Pessoais</h1>
 
-        <div class="personal-projects__carousel">
-          <div class="personal-projects__image-container">
+        <div class="personal-projects__carousel" id="carousel">
+          <!-- First -->
+          <div class="personal-projects__image-container active">
             <div class="personal-projects__image-overlay">
               <h1 class="text-center huge-title">Fitness Training - TCC</h1>
               <h2 class="text-center sub-title mb-50">
-                Sistema de Acadêmia para Alunos e Professores
+                Trabalho de Conclusão de Curso: Sistema de Acadêmia para Alunos
+                e Professores
               </h2>
             </div>
             <img
@@ -79,7 +81,40 @@
               class="personal-projects__image"
             />
           </div>
+
+          <!-- Second -->
+          <div class="personal-projects__image-container d-none">
+            <div class="personal-projects__image-overlay">
+              <h1 class="text-center huge-title">Portifólio Pessoal</h1>
+              <h2 class="text-center sub-title mb-50">
+                Portifólio pessoal com design simples para exibir minhas
+                habilidades e projetos
+              </h2>
+            </div>
+            <img
+              src="images/personal-projects/personal-portifolio/personal-portifolio-main.png"
+              class="personal-projects__image"
+            />
+          </div>
+
+          <!-- Second -->
+          <div class="personal-projects__image-container d-none">
+            <div class="personal-projects__image-overlay">
+              <h1 class="text-center huge-title">Portifólio Pessoal</h1>
+              <h2 class="text-center sub-title mb-50">
+                Portifólio pessoal com design simples para exibir minhas
+                habilidades e projetos
+              </h2>
+            </div>
+            <img
+              src="images/personal-projects/placeholder/placeholder.jpg"
+              class="personal-projects__image"
+            />
+          </div>
         </div>
+
+        <button style="color: black" onclick="nextImage()">Next</button>
+        <button style="color: black" onclick="previousImage()">Previous</button>
       </div>
 
       <div class="personal-projects__path-clip-filler"></div>
