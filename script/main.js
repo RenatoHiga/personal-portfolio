@@ -7,6 +7,8 @@ function getDiscordName(event) {
 
 const carousel = document.getElementById("carousel");
 let images = carousel.children;
+const imagesLength = images.length - 2;
+// -2 because the last two elements are the buttons
 
 function getCurrentImageIndex() {
   for (let index = 0; index < images.length; index++) {
@@ -27,22 +29,50 @@ function cleanAnimationClasses(index) {
 
 function nextImage() {
   const currentIndex = getCurrentImageIndex();
-
   const currentImage = images[currentIndex];
-  const nextImage = images[currentIndex + 1];
 
-  // images[0].classList.add("d-none");
+  const isFinalIndex = imagesLength === currentIndex + 1;
 
-  // images[1].classList.remove("d-none");
-  // images[1].classList.add("personal-projects__next-image");
-  console.log(getCurrentImageIndex());
+  let nextIndex = 0;
+  if (isFinalIndex) {
+    nextIndex = 0;
+  } else {
+    nextIndex = currentIndex + 1;
+  }
+
+  const nextImage = images[nextIndex];
+
+  currentImage.classList.add("d-none");
+  currentImage.classList.remove("active");
+  currentImage.classList.remove("personal-projects__next-image");
+  currentImage.classList.remove("personal-projects__previous-image");
+
+  nextImage.classList.remove("d-none");
+  nextImage.classList.add("personal-projects__next-image");
+  nextImage.classList.add("active");
 }
 
 function previousImage() {
-  let carousel = document.getElementById("carousel");
-  let images = carousel.children;
+  const currentIndex = getCurrentImageIndex();
+  const currentImage = images[currentIndex];
 
-  images[1].classList.add("d-none");
-  images[0].classList.remove("d-none");
-  images[0].classList.add("personal-projects__previous-image");
+  let previousIndex;
+  const finalPreviousIndex = currentIndex === 0;
+
+  if (finalPreviousIndex) {
+    previousIndex = imagesLength - 1;
+  } else {
+    previousIndex = currentIndex - 1;
+  }
+
+  const previousImage = images[previousIndex];
+
+  currentImage.classList.add("d-none");
+  currentImage.classList.remove("active");
+  currentImage.classList.remove("personal-projects__next-image");
+  currentImage.classList.remove("personal-projects__previous-image");
+
+  previousImage.classList.remove("d-none");
+  previousImage.classList.add("personal-projects__previous-image");
+  previousImage.classList.add("active");
 }
