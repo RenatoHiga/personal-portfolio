@@ -176,7 +176,7 @@
 
 .personal-projects__carousel {
   display: block;
-  width: 1280px;
+  width: 100%;
   height: 720px;
   position: relative;
   border-radius: 10px;
@@ -266,8 +266,8 @@
 
 .personal-projects__button {
   background-color: transparent;
-  cursor: pointer;
   border: 0;
+  cursor: pointer;
 }
 
 .personal-projects__button-container--left {
@@ -282,7 +282,7 @@
   .personal-projects {
     height: initial;
     min-height: 100vh;
-    margin-bottom: -2px;
+    margin-bottom: -14px;
   }
 
   .personal-projects__carousel {
@@ -293,6 +293,20 @@
 
   .personal-projects__image {
     min-height: 450px;
+  }
+
+  .personal-projects__image-overlay {
+    align-items: center;
+  }
+
+  .personal-projects__small-description {
+    font-size: 0.75em;
+    max-width: 225px;
+  }
+}
+@media (min-width: 1440px) {
+  .personal-projects__carousel {
+    max-width: 1440px;
   }
 }
 .professional-experience {
@@ -349,17 +363,35 @@
     font-size: 1em;
   }
 
+  .professional-experience__location-name,
+.professional-experience__job-role {
+    text-align: center;
+  }
+
   .professional-experience__job-role {
     font-size: 0.8em;
   }
 
+  .professional-experience__activities-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: initial;
+    padding-left: 22px;
+  }
+
   .professional-experience__activities-list > li {
     font-size: 0.65em;
+    padding-bottom: 5px;
   }
 
   .professional-experience__companies-list,
 .professional-experience__education-list {
     padding-left: 0;
+  }
+
+  .professional-experience__education-list {
+    margin-top: 50px;
   }
 }
 .social-media {
@@ -497,6 +529,13 @@ body {
   .huge-title {
     font-size: 1.5em;
   }
+}
+.who-am-i,
+.more-about-myself,
+.personal-projects,
+.professional-experience,
+.social-media {
+  min-width: 320px;
 }
 
 /*# sourceMappingURL=style.css.map */
