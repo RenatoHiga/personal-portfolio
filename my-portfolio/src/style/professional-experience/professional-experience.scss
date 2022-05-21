@@ -1,0 +1,90 @@
+.professional-experience {
+  display: block;
+  min-height: 100vh;
+  background-color: #1d478f;
+
+  position: relative;
+}
+
+.professional-experience__location-name {
+  font-size: 1.5em;
+}
+
+.professional-experience__job-role {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.professional-experience__lists-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.professional-experience__companies-list {
+  padding-left: 75px;
+}
+
+.professional-experience__education-list {
+  padding-left: 75px;
+}
+
+.professional-experience__activities-list {
+  margin-top: 15px;
+  max-width: 650px;
+}
+
+.professional-experience__path-clip-filler {
+  display: block;
+  width: 100%;
+  min-height: 73px;
+
+  position: absolute;
+  bottom: 0;
+
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 100%);
+
+  background-color: #2f5ba2;
+}
+
+@media (max-width: 1024px) {
+  .professional-experience__lists-container {
+    flex-direction: column;
+  }
+
+  .professional-experience__location-name {
+    font-size: 1em;
+  }
+
+  .professional-experience__location-name,
+  .professional-experience__job-role {
+    text-align: center;
+  }
+
+  .professional-experience__job-role {
+    font-size: 0.8em;
+  }
+
+  .professional-experience__activities-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: initial;
+    padding-left: 22px;
+  }
+
+  .professional-experience__activities-list > li {
+    font-size: 0.65em;
+    padding-bottom: 5px;
+  }
+
+  .professional-experience__companies-list,
+  .professional-experience__education-list {
+    padding-left: 0;
+  }
+
+  .professional-experience__education-list {
+    margin-top: 50px;
+  }
+}
