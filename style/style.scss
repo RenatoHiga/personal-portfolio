@@ -76,8 +76,21 @@ body {
   overflow: auto;
 }
 
+.d-none {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .huge-title {
     font-size: 1.5em;
   }
+}
+
+// Just to not break on extremely low resolutions devices
+.who-am-i,
+.more-about-myself,
+.personal-projects,
+.professional-experience,
+.social-media {
+  min-width: 320px;
 }
