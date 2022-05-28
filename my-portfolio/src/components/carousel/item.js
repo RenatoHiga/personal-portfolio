@@ -3,14 +3,11 @@ import { Component, h } from "preact";
 class Item extends Component {
     constructor(props) {
         super(props);
-        console.log('rerender');
-
     }
 
     addClasses = () => {
-        console.log(this.props.active);
         if (this.props.active) {
-            
+
             if (this.props.activateNextImageAnimation) {
                 return "personal-projects__image-container active personal-projects__next-image"
             } else if (this.props.activatePreviousImageAnimation) {
