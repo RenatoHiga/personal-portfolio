@@ -18,6 +18,7 @@ class Carousel extends Component {
           active: true,
           activateNextImageAnimation: false,
           activatePreviousImageAnimation: false,
+          link: "https://github.com/RenatoHiga/fitness-training-tcc"
         },
         {
           title: "Portifólio Pessoal",
@@ -28,16 +29,7 @@ class Carousel extends Component {
           active: false,
           activateNextImageAnimation: false,
           activatePreviousImageAnimation: false,
-        },
-        {
-          title: "Portifólio Pessoal",
-          description:
-            "Portifólio pessoal com design simples para exibir minhas habilidades e projetos",
-          imgName: "placeholder.jpg",
-          imgFolder: "placeholder",
-          active: false,
-          activateNextImageAnimation: false,
-          activatePreviousImageAnimation: false,
+          link: null,
         },
       ],
       itemsHtml: [],
@@ -56,6 +48,7 @@ class Carousel extends Component {
         active={item.active}
         activateNextImageAnimation={item.activateNextImageAnimation}
         activatePreviousImageAnimation={item.activatePreviousImageAnimation}
+        link={item.link}
       />
     ));
     this.setState({ itemsHtml: itemsHtml });

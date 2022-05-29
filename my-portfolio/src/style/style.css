@@ -171,7 +171,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 75px;
+  padding-top: 75px;
 }
 
 .personal-projects__carousel {
@@ -188,9 +188,6 @@
   width: 1280px;
   height: 720px;
   background-color: #7495c8;
-  background-image: url(../images/personal-projects/fitness-training/cadastra_exercicio.png);
-  background-size: cover;
-  background-position: center;
 }
 
 .personal-projects__image {
@@ -282,7 +279,6 @@
   .personal-projects {
     height: initial;
     min-height: 100vh;
-    margin-bottom: -14px;
   }
 
   .personal-projects__carousel {

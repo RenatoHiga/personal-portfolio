@@ -1,5 +1,6 @@
 .personal-projects {
-  min-height: 100vh;
+  min-height: 700px;
+  padding-bottom: 125px;
 
   position: relative;
   background-color: #07398e;
@@ -10,9 +11,8 @@
   width: 100%;
   min-height: 73px;
 
-  // position: absolute;
-  // bottom: 0;
-  margin-top: 75px;
+  position: absolute;
+  bottom: 0;
 
   clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
 
@@ -24,7 +24,7 @@
   flex-direction: column;
   align-items: center;
 
-  margin-top: 75px;
+  padding-top: 75px;
 }
 
 .personal-projects__carousel {
@@ -98,6 +98,10 @@
   transition-timing-function: ease-in-out;
 }
 
+.personal-projects__link {
+  text-decoration: none;
+}
+
 @keyframes enter {
   from {
     opacity: 0;
@@ -152,7 +156,7 @@
   .personal-projects {
     height: initial;
     min-height: 100vh;
-    margin-bottom: -14px;
+    // margin-bottom: -14px;
   }
 
   .personal-projects__carousel {
