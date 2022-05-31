@@ -1,6 +1,7 @@
 import { Component, h } from "preact";
 
 import Item from "./item";
+import Button from "./button";
 
 class Carousel extends Component {
   constructor() {
@@ -18,7 +19,7 @@ class Carousel extends Component {
           active: true,
           activateNextImageAnimation: false,
           activatePreviousImageAnimation: false,
-          link: "https://github.com/RenatoHiga/fitness-training-tcc"
+          link: "https://github.com/RenatoHiga/fitness-training-tcc",
         },
         {
           title: "Portifólio Pessoal",
@@ -51,6 +52,9 @@ class Carousel extends Component {
         link={item.link}
       />
     ));
+
+    itemsHtml.push(<Button click={this.showPreviousItem} type="left" />);
+    itemsHtml.push(<Button click={this.showNextItem} type="right" />);
     this.setState({ itemsHtml: itemsHtml });
   };
 
@@ -58,22 +62,23 @@ class Carousel extends Component {
     item.active = false;
     item.activateNextImageAnimation = false;
     item.activatePreviousImageAnimation = false;
-  }
+  };
 
   showItem = (item, animationType) => {
     item.active = true;
 
-    if (animationType === 'nextItem') {
+    if (animationType === "nextItem") {
       item.activateNextImageAnimation = true;
-    } else if (animationType === 'previousItem') {
+    } else if (animationType === "previousItem") {
       item.activatePreviousImageAnimation = true;
     }
-  }
+  };
 
   showNextItem = () => {
     const previousIndex = this.state.activeItemIndex;
 
-    const finalIndex = this.state.itemsHtml.length - 1;
+    const finalIndex = this.state.itemsHtml.length - 3;
+    // -3 because: -1 because index is always (length - 1). -2 because of the two buttons at the end
     const isLastIndex = finalIndex === this.state.activeItemIndex;
 
     if (isLastIndex) {
@@ -99,13 +104,14 @@ class Carousel extends Component {
     const isFirstIndex = firstIndex === this.state.activeItemIndex;
 
     if (isFirstIndex) {
-      const lastIndex = this.state.itemsHtml.length - 1;
+      const lastIndex = this.state.itemsHtml.length - 3;
+      // -3 because: -1 because index is always (length - 1). -2 because of the two buttons at the end
       this.state.activeItemIndex = lastIndex;
     } else {
       this.state.activeItemIndex = this.state.activeItemIndex - 1;
     }
 
-    let items = this.state.items
+    let items = this.state.items;
     const activeItem = items[this.state.activeItemIndex];
     const previousItem = items[previousItemIndex];
 
@@ -119,19 +125,6 @@ class Carousel extends Component {
     return (
       <div class="personal-projects__carousel" id="carousel">
         {this.state.itemsHtml}
-
-        {/* <!-- Buttons --> */}
-        <div class="personal-projects__button-container personal-projects__button-container--left">
-          <button class="personal-projects__button" onclick={this.showPreviousItem}>
-            <img src="../../assets/icons/arrow_back.svg" alt="Projeto anterior" />
-          </button>
-        </div>
-
-        <div class="personal-projects__button-container personal-projects__button-container--right">
-          <button class="personal-projects__button" onclick={this.showNextItem}>
-            <img src="../../assets/icons/arrow_forward.svg" alt="Próximo projeto" />
-          </button>
-        </div>
       </div>
     );
   }
