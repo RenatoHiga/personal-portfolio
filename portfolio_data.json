@@ -1,0 +1,52 @@
+{
+    "about_me": {
+        "role": "Desenvolvedor full-stack",
+        "most_used_technologies": [
+            "PHP",
+            "Laravel",
+            "MySql",
+            "Javascript",
+            "Vue"
+        ]
+    },
+    "professional_experiences": [
+        {
+            "business_name": "TrackCash",
+            "role": "Estagiário de T.I.",
+            "active_period": "Período: 06/2019 até 12/2019",
+            "description": "- Desenvolvimento de funcionalidades novas e correções de bugs no sistema em PHP com Laravel;<br>- Verificação de dados entre de dados de API's de E-commerce's e dados do banco de dados MySQL através da ferramenta Postman"
+        },
+        {
+            "business_name": "TrackCash",
+            "role": "Desenvolvedor web Júnior",
+            "active_period": "Período: 12/2019 até 08/2021",
+            "description": "- Desenvolvimento de telas do sistema com HTML, CSS, Sass, JavaScript e JQuery, seguindo o design estabelecido dentro do Figma;<br>- Integrações com sistemas de e-commercer's para extração de dados."
+        },
+        {
+            "business_name": "Delfos Consultoria",
+            "role": "Desenvolvedor Front-end",
+            "active_period": "Período: 10/2021 até 05/2022",
+            "description": "- Manutenção, implementação de funcionalidades e integrações de API’s no sistema Angular.js, de acordo com as necessidades do cliente;<br>- Design de páginas com Wordpress e Elementor."
+        },
+        {
+            "business_name": "SMB Store",
+            "role": "Desenvolvedor Full-stack Júnior",
+            "active_period": "Período: 06/2022 até atualmente",
+            "description": "- Conversão de Telas antigas de Angular.js para Vue.js, melhorar performance do sistema front-end;<br>- Integração com Web services internos;<br>- Correções e melhorias nos Web Services PHP com CodeIgniter;<br>- Criação das funcionalidades de: Contagem de Estoques e Loja de Aplicativos"
+        }
+    ],
+    "contacts": {
+        "social_medias": [
+            {
+                "name": "LinkedIn",
+                "url": "https://www.linkedin.com/in/renato-higa-higuti-a40ab3156/",
+                "image_path": "@/assets/icons/linkedin.svg"
+            },
+            {
+                "name": "Github",
+                "url": "https://github.com/RenatoHiga",
+                "image_path": "@/assets/icons/github.svg"
+            }
+        ]
+    }
+}

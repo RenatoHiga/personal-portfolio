@@ -1,32 +1,46 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import emailjs from '@emailjs/browser'
 
+let reply_email = ref('')
+let subject = ref('')
+let message = ref('')
+let emailIsBeingSent = ref(false)
+
 function sendEmail() {
+  emailIsBeingSent.value = true
+  message.value = strip(message.value)
+
+  if (reply_email.value == '' || subject.value == '' || message.value == '') {
+    alert(
+      'Por favor, preencha todos os campos necessários do formulário, para poder enviar a mensagem!'
+    )
+    emailIsBeingSent.value = false
+    return
+  }
+
   emailjs.init('MNGc7_32ixg9CXLig')
-  emailjs.sendForm('contact_service', 'contact_form', '#contact_form').then(
-    function () {
-      console.log('email has been sent')
-    },
-    function (error) {
-      console.log('error', error)
-    }
-  )
+  emailjs
+    .sendForm('contact_service', 'contact_form', '#contact_form')
+    .then(
+      function () {
+        alert('Sua mensagem foi enviada com sucesso!')
+      },
+      function (error) {
+        console.log('error: ', error)
+      }
+    )
+    .then(() => {
+      emailIsBeingSent.value = false
+    })
 }
 
-onMounted(() => {
-  // emailjs.init('MNGc7_32ixg9CXLig')
-  // emailjs.sendForm('contact_service', 'contact_form', '#contact_form').then(
-  //   function () {
-  //     console.log('e-mail has been sent')
-  //   },
-  //   function (error) {
-  //     console.log('error', error)
-  //   }
-  // )
-})
+function strip(html: string) {
+  let doc = new DOMParser().parseFromString(html, 'text/html')
+  return doc.body.textContent || ''
+}
 
-console.log(emailjs)
+onMounted(() => {})
 </script>
 
 <template>
@@ -165,14 +179,18 @@ console.log(emailjs)
         <h1 class="section-title">Contatos</h1>
 
         <div class="container-social-media-buttons">
-          <button class="social-media-button">
+          <a
+            class="social-media-button"
+            href="https://www.linkedin.com/in/renato-higa-higuti-a40ab3156"
+            target="_blank"
+          >
             <img src="@/assets/icons/linkedin.svg" alt="Github" class="social-media-button__icon" />
             <span class="social-media-button__name">LinkedIn</span>
-          </button>
-          <button class="social-media-button">
+          </a>
+          <a class="social-media-button" href="https://github.com/RenatoHiga" target="_blank">
             <img src="@/assets/icons/github.svg" alt="Linkedin" class="social-media-button__icon" />
             <span class="social-media-button__name">GitHub</span>
-          </button>
+          </a>
         </div>
 
         <form class="contact-form" id="contact_form" @submit.prevent="sendEmail()">
@@ -186,6 +204,7 @@ console.log(emailjs)
                   type="email"
                   name="email"
                   id="email"
+                  v-model="reply_email"
                   class="input-field__field"
                   placeholder="exemplo@email.com"
                 />
@@ -197,6 +216,7 @@ console.log(emailjs)
                   type="text"
                   name="subject"
                   id="subject"
+                  v-model="subject"
                   placeholder="Nome do assunto"
                   class="input-field__field"
                 />
@@ -209,14 +229,27 @@ console.log(emailjs)
                 type="text"
                 name="message"
                 id="message"
+                v-model="message"
                 placeholder="Escreva aqui sua mensagem"
                 class="input-field__field input-field__message"
                 rows="6"
               ></textarea>
             </div>
 
-            <button class="contact-form__button-send">
-              Enviar <img src="@/assets/icons/send.svg" alt="enviar" />
+            <button class="contact-form__button-send" :disabled="emailIsBeingSent">
+              Enviar
+              <img
+                src="@/assets/icons/send.svg"
+                alt="enviar"
+                id="send_message_icon"
+                :class="{ 'send-message-icon--hide-icon': emailIsBeingSent }"
+              />
+              <div
+                class="loading-wheel"
+                :class="{ 'loading-wheel--show-loading': emailIsBeingSent }"
+              >
+                <div class="loading-wheel__rounded-bar"></div>
+              </div>
             </button>
           </div>
         </form>
