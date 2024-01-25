@@ -1,4 +1,33 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import emailjs from '@emailjs/browser'
+
+function sendEmail() {
+  emailjs.init('MNGc7_32ixg9CXLig')
+  emailjs.sendForm('contact_service', 'contact_form', '#contact_form').then(
+    function () {
+      console.log('email has been sent')
+    },
+    function (error) {
+      console.log('error', error)
+    }
+  )
+}
+
+onMounted(() => {
+  // emailjs.init('MNGc7_32ixg9CXLig')
+  // emailjs.sendForm('contact_service', 'contact_form', '#contact_form').then(
+  //   function () {
+  //     console.log('e-mail has been sent')
+  //   },
+  //   function (error) {
+  //     console.log('error', error)
+  //   }
+  // )
+})
+
+console.log(emailjs)
+</script>
 
 <template>
   <main>
@@ -146,7 +175,7 @@
           </button>
         </div>
 
-        <form class="contact-form">
+        <form class="contact-form" id="contact_form" @submit.prevent="sendEmail()">
           <h2>Formulário para contato</h2>
 
           <div class="contact-form-content">

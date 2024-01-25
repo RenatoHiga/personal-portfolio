@@ -1,4 +1,5 @@
 import './assets/main.css'
+import '../node_modules/@emailjs/browser/dist/email.min.js'
 
 import { createApp } from 'vue'
 import App from './App.vue'
