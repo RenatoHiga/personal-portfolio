@@ -18,6 +18,12 @@
   }
 } */
 
+@media screen and (max-width: 640px) {
+  .hide-on-small {
+    display: none;
+  }
+}
+
 .flex-column {
   display: flex;
   flex-direction: column;
@@ -60,6 +66,12 @@
   justify-content: center;
 }
 
+@media screen and (max-width: 640px) {
+  .portrait {
+    margin-top: 20px;
+  }
+}
+
 .portrait__image-container {
   position: relative;
 }
@@ -84,6 +96,17 @@
   font-size: 2.75rem;
   text-transform: uppercase;
   text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+  .my-name {
+    line-height: 1.2;
+  }
+
+  .carousel-wrapper {
+    padding: 0 !important;
+    height: 600px !important;
+  }
 }
 
 .my-role {
@@ -234,6 +257,16 @@
   box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.4);
 }
 
+@media screen and (max-width: 640px) {
+  .card {
+    min-width: 260px;
+  }
+
+  .container-professional-experiences {
+    padding: 60px 0 0 0;
+  }
+}
+
 .professional-experience__business-name {
   font-size: 1.2rem;
   font-weight: 600;
@@ -264,6 +297,12 @@
   cursor: pointer;
   transition: 0.4s;
   text-decoration: none;
+}
+
+@media screen and (max-width: 640px) {
+  .social-media-button {
+    min-width: 120px;
+  }
 }
 
 .social-media-button:hover {
@@ -298,6 +337,12 @@
 .contact-form__subject-email-row {
   display: flex;
   column-gap: 10px;
+}
+
+@media screen and (max-width: 640px) {
+  .contact-form__subject-email-row {
+    column-gap: 5px;
+  }
 }
 
 .input-field {

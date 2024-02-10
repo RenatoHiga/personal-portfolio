@@ -1,6 +1,7 @@
 {
     "about_me": {
         "role": "Desenvolvedor full-stack",
+        "description": "Sou um desenvolvedor com 4 anos de experiência profissional, focado em sempre trazer os <br class=\"hide-on-small\"/>melhores resultados, ajudar e crescer junto com outros desenvolvedores!",
         "most_used_technologies": [
             "PHP",
             "Laravel",
@@ -40,12 +41,12 @@
             {
                 "name": "LinkedIn",
                 "url": "https://www.linkedin.com/in/renato-higa-higuti-a40ab3156/",
-                "image_path": "@/assets/icons/linkedin.svg"
+                "image_path": "../assets/icons/linkedin.svg"
             },
             {
                 "name": "Github",
                 "url": "https://github.com/RenatoHiga",
-                "image_path": "@/assets/icons/github.svg"
+                "image_path": "../assets/icons/github.svg"
             }
         ]
     }

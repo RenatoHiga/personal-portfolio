@@ -1,11 +1,21 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import * as portfolio_data from '../../portfolio_data.json'
+import type { ProfessionalExperience } from '../interfaces/ProfessionalExperience'
+import type { SocialMedia } from '../interfaces/SocialMedia'
 import emailjs from '@emailjs/browser'
+import ProfessionalExperienceCardVue from '@/components/ProfessionalExperienceCard.vue'
+import SocialMediaButton from '@/components/SocialMediaButton.vue'
 
 let reply_email = ref('')
 let subject = ref('')
 let message = ref('')
 let emailIsBeingSent = ref(false)
+
+const professional_experiences: Array<ProfessionalExperience> =
+  portfolio_data.professional_experiences
+const social_medias: Array<SocialMedia> = portfolio_data.contacts.social_medias
+const about_me = portfolio_data.about_me
 
 function sendEmail() {
   emailIsBeingSent.value = true
@@ -61,17 +71,14 @@ onMounted(() => {})
         </div>
 
         <h1 class="my-name">Renato Higa Higuti</h1>
-        <h2 class="my-role">Desenvolvedor Full-stack</h2>
+        <h2 class="my-role">{{ about_me.role }}</h2>
 
-        <p class="my-description">
-          Sou um desenvolvedor com 4 anos de experiência profissional, focado em sempre trazer os<br />
-          melhores resultados, ajudar e crescer junto com outros desenvolvedores!
-        </p>
+        <p class="my-description" v-html="about_me.description"></p>
 
         <div class="most-used-technologies">
           <p>Tecnologias que mais utilizo:</p>
           <p class="most-used-technologies__technologies">
-            PHP | Laravel | Mysql | Javascript | Vue
+            {{ about_me.most_used_technologies.join(' | ') }}
           </p>
         </div>
       </div>
@@ -120,10 +127,17 @@ onMounted(() => {})
       <div class="section-content">
         <h1 class="section-title">Experiência profissional</h1>
 
-        <div></div>
-
         <div class="container-professional-experiences">
-          <div class="card">
+          <ProfessionalExperienceCardVue
+            v-for="(professional_experience, index) in professional_experiences"
+            :key="index"
+            :business_name="professional_experience.business_name"
+            :role="professional_experience.role"
+            :active_period="professional_experience.active_period"
+            :description="professional_experience.description"
+          />
+
+          <!-- <div class="card">
             <h2 class="professional-experience__business-name">TrackCash</h2>
             <p class="professional-experience__role">Estagiário de T.I.</p>
             <p class="professional-experience__period">Período: 06/2019 até 12/2019</p>
@@ -141,8 +155,8 @@ onMounted(() => {})
             <p class="professional-experience__period">Período: 10/2021 até 05/2022</p>
             <p class="professional-experience__description">
               - Manutenção, implementação de funcionalidades e integrações de API’s no sistema
-              Angular.js, de acordo com as necessidades do cliente; - Design de páginas com
-              Wordpress e Elementor.
+              Angular.js, de acordo com as necessidades do cliente; <br />
+              - Design de páginas com Wordpress e Elementor.
             </p>
           </div>
 
@@ -169,7 +183,7 @@ onMounted(() => {})
               dados MySQL através da ferramenta Postman - Verificação de dados entre de dados de
               API's de E-commerce's e dados do banco de dados MySQL através da ferramenta Postman
             </p>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -179,18 +193,13 @@ onMounted(() => {})
         <h1 class="section-title">Contatos</h1>
 
         <div class="container-social-media-buttons">
-          <a
-            class="social-media-button"
-            href="https://www.linkedin.com/in/renato-higa-higuti-a40ab3156"
-            target="_blank"
-          >
-            <img src="@/assets/icons/linkedin.svg" alt="Github" class="social-media-button__icon" />
-            <span class="social-media-button__name">LinkedIn</span>
-          </a>
-          <a class="social-media-button" href="https://github.com/RenatoHiga" target="_blank">
-            <img src="@/assets/icons/github.svg" alt="Linkedin" class="social-media-button__icon" />
-            <span class="social-media-button__name">GitHub</span>
-          </a>
+          <SocialMediaButton
+            :name="social_media_button.name"
+            :url="social_media_button.url"
+            :image_path="social_media_button.image_path"
+            v-for="(social_media_button, index) in social_medias"
+            :key="index"
+          />
         </div>
 
         <form class="contact-form" id="contact_form" @submit.prevent="sendEmail()">
