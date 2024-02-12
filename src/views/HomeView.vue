@@ -35,6 +35,7 @@ function sendEmail() {
     .then(
       function () {
         alert('Sua mensagem foi enviada com sucesso!')
+        cleanEmailForm()
       },
       function (error) {
         console.log('error: ', error)
@@ -43,6 +44,12 @@ function sendEmail() {
     .then(() => {
       emailIsBeingSent.value = false
     })
+}
+
+function cleanEmailForm() {
+  reply_email.value = ''
+  subject.value = ''
+  message.value = ''
 }
 
 function strip(html: string) {
@@ -136,54 +143,6 @@ onMounted(() => {})
             :active_period="professional_experience.active_period"
             :description="professional_experience.description"
           />
-
-          <!-- <div class="card">
-            <h2 class="professional-experience__business-name">TrackCash</h2>
-            <p class="professional-experience__role">Estagiário de T.I.</p>
-            <p class="professional-experience__period">Período: 06/2019 até 12/2019</p>
-            <p class="professional-experience__description">
-              - Desenvolvimento de funcionalidades novas e correções de bugs no sistema em PHP com
-              Laravel;<br />
-              - Verificação de dados entre de dados de API's de E-commerce's e dados do banco de
-              dados MySQL através da ferramenta Postman
-            </p>
-          </div>
-
-          <div class="card">
-            <h2 class="professional-experience__business-name">Delfos Consultoria</h2>
-            <p class="professional-experience__role">Desenvolvedor Front-end</p>
-            <p class="professional-experience__period">Período: 10/2021 até 05/2022</p>
-            <p class="professional-experience__description">
-              - Manutenção, implementação de funcionalidades e integrações de API’s no sistema
-              Angular.js, de acordo com as necessidades do cliente; <br />
-              - Design de páginas com Wordpress e Elementor.
-            </p>
-          </div>
-
-          <div class="card">
-            <h2 class="professional-experience__business-name">TrackCash</h2>
-            <p class="professional-experience__role">Estagiário de T.I.</p>
-            <p class="professional-experience__period">Período: 06/2019 até 12/2019</p>
-            <p class="professional-experience__description">
-              - Desenvolvimento de funcionalidades novas e correções de bugs no sistema em PHP com
-              Laravel;<br />
-              - Verificação de dados entre de dados de API's de E-commerce's e dados do banco de
-              dados MySQL através da ferramenta Postman
-            </p>
-          </div>
-
-          <div class="card">
-            <h2 class="professional-experience__business-name">TrackCash</h2>
-            <p class="professional-experience__role">Estagiário de T.I.</p>
-            <p class="professional-experience__period">Período: 06/2019 até 12/2019</p>
-            <p class="professional-experience__description">
-              - Desenvolvimento de funcionalidades novas e correções de bugs no sistema em PHP com
-              Laravel;<br />
-              - Verificação de dados entre de dados de API's de E-commerce's e dados do banco de
-              dados MySQL através da ferramenta Postman - Verificação de dados entre de dados de
-              API's de E-commerce's e dados do banco de dados MySQL através da ferramenta Postman
-            </p>
-          </div> -->
         </div>
       </div>
     </section>
