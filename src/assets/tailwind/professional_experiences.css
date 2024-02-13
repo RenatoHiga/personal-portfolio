@@ -1,0 +1,44 @@
+.professional-experience {
+  background: linear-gradient(#225166, #1a3c4d);
+}
+
+@media screen and (max-width: 1400px) {
+  .professional-experience .section-content {
+    height: auto;
+    max-height: none;
+    padding-bottom: 60px;
+  }
+}
+
+.container-professional-experiences {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 45px;
+  row-gap: 30px;
+  padding: 60px 60px 0 60px;
+}
+
+.card {
+  min-width: 430px;
+  max-width: 600px;
+  padding: 10px 15px;
+  background-color: #276d8c;
+  border-radius: 15px;
+  box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 640px) {
+  .card {
+    min-width: 260px;
+  }
+
+  .container-professional-experiences {
+    padding: 60px 0 0 0;
+  }
+}
+
+.professional-experience__business-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}

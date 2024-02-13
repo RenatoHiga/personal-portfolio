@@ -1,0 +1,93 @@
+.projects {
+  background-color: #225166;
+}
+
+.projects__title {
+  font-size: 2.25rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.carousel-wrapper {
+  height: 100%;
+  padding: 60px;
+}
+
+.carousel {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  position: relative;
+  box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.carousel__content {
+  height: 100%;
+  border-radius: 10px;
+  background-color: rgb(40, 137, 146);
+}
+
+.carousel__next {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.carousel__previous {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.carousel__description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 15px 0 10px 0;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(45, 45, 45, 90));
+  border-radius: 0 0 10px 10px;
+}
+
+.carousel__title {
+  text-align: center;
+}
+
+.carousel__text {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.carousel__icon-next,
+.carousel__icon-previous {
+  width: 48px;
+  height: 48px;
+  filter: invert(28%) sepia(6%) saturate(4119%) hue-rotate(153deg) brightness(94%) contrast(92%);
+  cursor: pointer;
+}
+
+.carousel__next,
+.carousel__previous {
+  top: 42%;
+}
+
+.carousel__selection-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.carousel__dot {
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+.carousel__dot.carousel__dot--active {
+  background-color: rgba(255, 255, 255, 0.9);
+}

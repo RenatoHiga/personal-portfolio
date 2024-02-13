@@ -1,0 +1,74 @@
+.who-am-i {
+  background: linear-gradient(#1a3d4d, #225166);
+}
+
+.portrait {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 640px) {
+  .portrait {
+    margin-top: 20px;
+  }
+}
+
+.portrait__image-container {
+  position: relative;
+}
+
+.portrait__image {
+  position: absolute;
+  border-radius: 130px;
+  top: 11px;
+  right: 12px;
+  box-shadow: 6px -6px 4px rgba(0, 0, 0, 0.2);
+}
+
+.portrait__background {
+  width: 250px;
+  height: 250px;
+  background-color: #1f7299;
+  border-radius: 130px;
+}
+
+.my-name {
+  margin-top: 25px;
+  font-size: 2.75rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+  .my-name {
+    line-height: 1.2;
+  }
+
+  .carousel-wrapper {
+    padding: 0 !important;
+    height: 600px !important;
+  }
+}
+
+.my-role {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.my-description {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.most-used-technologies {
+  /* display: inline-block; */
+  margin-top: 25px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.most-used-technologies__technologies {
+  text-transform: uppercase;
+}

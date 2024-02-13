@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-width: 280px;
+  min-height: 100vh;
+  color: rgba(255, 255, 255, 0.87);
+  background: #181818;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  font-weight: normal;
+}
+
+@media screen and (max-width: 640px) {
+  .hide-on-small {
+    display: none;
+  }
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section {
+  /* max-height: 1080px;
+  min-height: 800px;
+  max-width: 1920px;
+  padding: 60px 10px 0 10px; */
+}
+
+.section-title {
+  font-size: 2.25rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.section-content {
+  height: 100vh;
+  max-height: 950px;
+  min-height: 900px;
+  max-width: 1920px;
+  padding: 60px 10px 0 10px;
+  margin: 0 auto;
+}

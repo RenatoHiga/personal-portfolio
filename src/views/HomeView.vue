@@ -6,6 +6,7 @@ import type { SocialMedia } from '../interfaces/SocialMedia'
 import emailjs from '@emailjs/browser'
 import ProfessionalExperienceCardVue from '@/components/ProfessionalExperienceCard.vue'
 import SocialMediaButton from '@/components/SocialMediaButton.vue'
+import CarouselImages from '@/components/CarouselImages.vue'
 
 let reply_email = ref('')
 let subject = ref('')
@@ -96,7 +97,8 @@ onMounted(() => {})
         <h1 class="projects__title text-center">Projetos realizados</h1>
 
         <div class="carousel-wrapper">
-          <div class="carousel">
+          <CarouselImages></CarouselImages>
+          <!-- <div class="carousel">
             <div class="carousel__previous">
               <img
                 src="@/assets/icons/arrow_back.svg"
@@ -125,7 +127,7 @@ onMounted(() => {})
                 class="carousel__icon-next"
               />
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
