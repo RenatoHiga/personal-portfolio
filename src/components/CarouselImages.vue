@@ -18,10 +18,41 @@ let projects = ref([
   }
 ])
 let currentActiveIndex = ref(0)
+let typeAnimation = ref('next_image')
 
 function getImageUrl(url: string) {
   const new_url = new URL(url, import.meta.url).href
   return new_url
+}
+
+function showNextImage() {
+  const next_index: number = currentActiveIndex.value + 1
+  const last_index: number = projects.value.length - 1
+
+  if (next_index > last_index) {
+    currentActiveIndex.value = 0
+  } else {
+    currentActiveIndex.value = next_index
+  }
+
+  typeAnimation.value = 'next_image'
+}
+
+function showPreviousImage() {
+  const previous_index: number = currentActiveIndex.value - 1
+  const initial_index: number = 0
+
+  if (previous_index < initial_index) {
+    currentActiveIndex.value = projects.value.length - 1
+  } else {
+    currentActiveIndex.value = previous_index
+  }
+
+  typeAnimation.value = 'previous_image'
+}
+
+function selectImageByIndex(index: number) {
+  currentActiveIndex.value = index
 }
 </script>
 
@@ -32,15 +63,25 @@ function getImageUrl(url: string) {
         :src="getImageUrl('../assets/icons/arrow_back.svg')"
         alt="anterior"
         class="carousel__icon-previous"
+        @click="showPreviousImage"
       />
     </div>
     <div class="carousel__content">
       <div
-        class="carousel__image"
+        class="carousel__content-container"
         v-for="(project, index) in projects"
         :key="index"
         v-show="currentActiveIndex == index"
       >
+        <div
+          class="carousel__image-container"
+          :class="{
+            carousel__animation_show_next_image: typeAnimation == 'next_image',
+            carousel__animation_show_previous_image: typeAnimation == 'previous_image'
+          }"
+        >
+          <img src="#!" alt="teste" />
+        </div>
         <div class="carousel__description">
           <h1 class="carousel__title">{{ project.title }}</h1>
           <p class="carousel__text">
@@ -48,7 +89,13 @@ function getImageUrl(url: string) {
           </p>
           <div class="carousel__selection-dots">
             <!-- <div class="carousel__dot carousel__dot--active"></div> -->
-            <div class="carousel__dot" v-for="number in projects.length" :key="number"></div>
+            <div
+              class="carousel__dot"
+              :class="{ 'carousel__dot--active': index == currentActiveIndex }"
+              v-for="(project, index) in projects.length"
+              :key="index"
+              @click="selectImageByIndex(index)"
+            ></div>
           </div>
         </div>
       </div>
@@ -71,6 +118,7 @@ function getImageUrl(url: string) {
         :src="getImageUrl('../assets/icons/arrow_forward.svg')"
         alt="próximo"
         class="carousel__icon-next"
+        @click="showNextImage"
       />
     </div>
   </div>
