@@ -30,7 +30,7 @@ function sendEmail() {
     return
   }
 
-  emailjs.init('MNGc7_32ixg9CXLig')
+  emailjs.init(import.meta.env.VITE_EMAIL_JS_KEY)
   emailjs
     .sendForm('contact_service', 'contact_form', '#contact_form')
     .then(
